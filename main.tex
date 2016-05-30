@@ -1,0 +1,84 @@
+\documentclass[a4paper]{report}
+
+\input{config.tex}
+
+%====================== INFORMATION AND RULES ======================
+
+%rajouter les numérotation pour les \paragraphe et \subparagraphe
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\hypersetup{
+	pdfauthor = {Your name},
+	pdftitle = {Document title},
+	pdfsubject = {Document subject},
+	pdfkeywords = {keywords, separated, by, commas},
+	pdfstartview={FitH},
+	pdfcreator = {\LaTeX}
+	}
+
+\begin{document}
+	\selectlanguage{french}
+	
+	%régler l'espacement entre les lignes
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	
+	%page de garde
+	\input{./title.tex}
+	\setcounter{page}{0}
+	
+	%page blanche
+	\newpage
+	~
+	%ne pas numéroter cette page
+	\thispagestyle{empty}
+	\setcounter{page}{0}
+	\newpage
+	
+	\input{./thanks.tex}
+	
+	\newpage
+	%ne pas numéroter cette page
+	\thispagestyle{empty}
+	\setcounter{page}{0}
+	\newpage
+	
+	\input{./abstract.tex}
+	
+	\setcounter{tocdepth}{3}
+	\tableofcontents
+	%\thispagestyle{empty}
+	%\setcounter{page}{0}
+	%ne pas numéroter le sommaire
+	
+	\newpage
+	
+	%espacement entre les lignes d'un tableau
+	\renewcommand{\arraystretch}{1.5}
+	
+	%====================== INCLUSION DES PARTIES ======================
+	
+	~
+	%\thispagestyle{empty}
+	%recommencer la numérotation des pages à "1"
+	%\setcounter{page}{0}
+	\newpage
+	
+	\input{./chapters/chapitre1.tex}
+	
+	\input{./chapters/chapitre2.tex}
+	
+	\input{./chapters/conclusion.tex}
+	
+	\input{./appendix/appendix.tex}
+	
+	\newpage
+	
+	\nocite{*}
+	
+	%choix du style de la biblio
+	\bibliographystyle{plain}
+	%inclusion de la biblio
+	\bibliography{./bibliography/bibliography.bib}\addcontentsline{toc}{part}{Bibliographie}
+	
+\end{document}
