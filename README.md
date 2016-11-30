@@ -1,4 +1,4 @@
-# LaTeX_template
+# LaTeX_template            [![Build Status](https://travis-ci.org/BlackyFox/LaTeX_template.svg?branch=master)](https://travis-ci.org/BlackyFox/LaTeX_template)
 Personnal LaTeX template
 
 ## Compilation
