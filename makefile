@@ -4,8 +4,7 @@
 
 main = main
 bib = bibliography/bibliography.bib
-tmp = *.aux *.backup *.acn *.acr *.bbl *.glg *.glo *.gls *.glsdefs *.ist *.log *.out *.xml *.toc *.xdy *.alg *.blg *-blx.bib *.bcf
-
+tmp = .*.aux|.*.backup|.*.acn|.*.acr|.*.bbl|.*.glg|.*.glo|.*.gls|.*.glsdefs|.*.ist|.*.log|.*.out|.*.xml|.*.toc|.*.xdy|.*.alg|.*.blg|.*.-blx.bib|.*.bcf
 
 ###############################################################################
 ###############################################################################
@@ -19,7 +18,7 @@ main.pdf: *.tex $(bib)
 	pdflatex -interaction=batchmode $(main).tex
 
 clean: 
-	rm -f $(tmp)
+	find . -regextype posix-awk -regex "($(tmp))" -type f -delete
 
 main.docx: *.tex $(bib)
 	pandoc -s $(main).tex -o $(main).docx

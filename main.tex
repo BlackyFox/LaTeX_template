@@ -1,21 +1,8 @@
 \documentclass[a4paper]{report}
 
-\input{config.tex}
-
-%====================== INFORMATION AND RULES ======================
-
-%rajouter les numérotation pour les \paragraphe et \subparagraphe
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-
-\hypersetup{
-	pdfauthor = {Your name},
-	pdftitle = {Document title},
-	pdfsubject = {Document subject},
-	pdfkeywords = {keywords, separated, by, commas},
-	pdfstartview={FitH},
-	pdfcreator = {\LaTeX}
-	}
+\input{config/imports.tex}
+\input{config/def.tex}
+\input{config/custom.tex}
 
 \begin{document}
 	\selectlanguage{french}
@@ -23,24 +10,25 @@
 	%régler l'espacement entre les lignes
 	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 	
+	%ligne de couleur sur le coté
+	\input{./layout/sideline.tex}
+	
 	%page de garde
 	\input{./title.tex}
-	\setcounter{page}{0}
 	
 	%page blanche
 	\newpage
 	~
 	%ne pas numéroter cette page
 	\thispagestyle{empty}
-	\setcounter{page}{0}
 	\newpage
 	
 	\input{./thanks.tex}
 	
 	\newpage
 	%ne pas numéroter cette page
+	~
 	\thispagestyle{empty}
-	\setcounter{page}{0}
 	\newpage
 	
 	\input{./abstract.tex}

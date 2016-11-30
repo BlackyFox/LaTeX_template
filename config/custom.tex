@@ -1,0 +1,154 @@
+%\setlength{\headheight}{25pt}
+%\setlength{\headsep}{35pt}
+%\setlength{\textheight}{569pt}
+%\setlength{\headheight}{20pt}
+
+\pagestyle{fancy}
+
+\newif\ifBgUse
+
+\AddEverypageHook{%
+	\ifBgUse%
+	\ifodd\value{page} 
+	\backgroundsetup{position={current page.north east},color=red-itr,nodeanchor={north east},%
+		contents={\rule{25pt}{\paperheight}}}%
+	\else
+	\backgroundsetup{position={current page.north west},color=red-itr,nodeanchor={north west},%
+		contents={\rule{25pt}{\paperheight}}}%
+	\fi%
+	\BgMaterial%
+	\fi}
+
+
+\AddEverypageHook{%
+	\ifodd\value{page} 
+	\rhead{\includegraphics[height=12pt]{./img/GitHub.png}}
+	\lhead{\includegraphics[height=12pt]{./img/GitHub.png}}
+	\else
+	\rhead{\includegraphics[height=12pt]{./img/GitHub.png}}
+	\lhead{\includegraphics[height=12pt]{./img/GitHub.png}}
+	\fi}
+
+% listing languages styles
+
+\lstdefinestyle{customc}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=L,
+	xleftmargin=\parindent,
+	language=C,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+	numbers=left,
+	firstnumber=1,
+	numberfirstline=true,
+	xleftmargin = 0.5cm,
+}
+
+\lstdefinestyle{customasm}{
+	belowcaptionskip=1\baselineskip,
+	frame=L,
+	xleftmargin=\parindent,
+	language=[x86masm]Assembler,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle=\itshape\color{purple!40!black},
+	numbers=left,
+	firstnumber=1,
+	numberfirstline=true,
+	xleftmargin = 0.5cm,
+}
+
+\lstdefinestyle{custombash}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}
+			\hookrightarrow\space}},
+	frame=L,
+	xleftmargin=\parindent,
+	language=bash,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+	numbers=left,
+	firstnumber=1,
+	numberfirstline=true,
+	xleftmargin = 0.5cm,
+}
+
+\lstdefinestyle{custompython}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}
+			\hookrightarrow\space}},
+	frame=L,
+	xleftmargin=\parindent,
+	language=python,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+	numbers=left,
+	firstnumber=1,
+	numberfirstline=true,
+	xleftmargin = 0.5cm,
+}
+
+\lstdefinelanguage{config}
+{
+	% list of keywords
+	morekeywords={
+		true,
+		false,
+		hardware,
+		0,
+		normal
+	},
+	sensitive=false,
+}
+
+\lstdefinestyle{customconfig}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}
+			\hookrightarrow\space}},
+	frame=L,
+	xleftmargin=\parindent,
+	language=config,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+	numbers=left,
+	firstnumber=1,
+	numberfirstline=true,
+	xleftmargin = 0.5cm,
+}
+
+\lstset{
+	captionpos=b,
+	escapechar=°
+}
+
+\newcommand\newappendix[1]{%
+	\refstepcounter{chapter}\chapter*{\thechapter. #1}%
+	\addcontentsline{toc}{chapter}{\thechapter. #1}%
+}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\newcommand{\yep}{\textcolor{green}{\checkmark}}
+\newcommand{\nope}{\textcolor{red}{\textsf{X}}}
+\newcommand{\ti}[1]{\multicolumn{1}{c}{\bfseries #1}}
+\def\tabularxcolumn#1{m{#1}}
+
+\renewcommand{\lstlistingname}{Code}

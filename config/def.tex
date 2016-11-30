@@ -1,0 +1,31 @@
+%====================== INFORMATION ET REGLES ======================
+
+%rajouter les numérotation pour les \paragraphe et \subparagraphe
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\hypersetup{                            % Information sur le document
+pdfauthor = {YOUR DAMN NAME},         % Auteurs
+pdftitle = {YOUR DAMN TITLE},           % Titre du document
+pdfsubject = {THE (you guessed it) DAMN SUBJECT},       % Sujet
+pdfkeywords = {keywords, separated, by, wonderfull, commas},
+% Mots-clefs
+pdfstartview={FitH},                    % ajuste la page à la largueur de l'écran
+pdfcreator = {\LaTeX}}% Logiciel qui a crée le document
+%pdfproducer = {}} % Société avec produit le logiciel
+
+\definecolor{myblue}{RGB}{29,57,127}
+\definecolor{red-itr}{RGB}{170,46,49}
+\definecolor{dark-gray}{gray}{0.30}
+
+%rajouter les numérotation pour les \paragraphe et \subparagraphe
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\newcommand*\VerBar[2]{{\color{#1}\rule{#2}{65pt}}}
+
+\addtokomafont{labelinglabel}{\sffamily}
+
+\newlist{NewDesc}{description}{2}
+\setlist[NewDesc]{leftmargin=12em,style=nextline}
+\makeglossaries
